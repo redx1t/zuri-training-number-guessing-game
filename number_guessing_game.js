@@ -16,7 +16,8 @@ function guessing_game() {
   var points = 0;
   var username = prompt("Please enter your username", "");
   if (username == null || username == "") {
-    return "please enter your username to play";
+    window.alert("please enter your username to play");
+    return;
   }
   var setCookie = (username, points) => {
     document.cookie = `username=${encodeURIComponent(username)};`;
@@ -36,7 +37,8 @@ function guessing_game() {
     }
   }
   setCookie(username, points);
-  return document.cookie;
+   console.log(document.cookie);
+   return;
 }
 
 guessing_game();
